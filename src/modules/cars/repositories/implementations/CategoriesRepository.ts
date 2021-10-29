@@ -1,4 +1,4 @@
-import { EntityRepository, getRepository, Repository } from "typeorm";
+import { getRepository, Repository } from "typeorm";
 
 import { Category } from "../../entities/Category";
 import {
@@ -6,7 +6,6 @@ import {
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
 
-@EntityRepository(Category)
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
