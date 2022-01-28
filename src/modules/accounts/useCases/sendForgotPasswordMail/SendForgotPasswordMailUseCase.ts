@@ -5,16 +5,16 @@ import { v4 as uuidV4 } from "uuid";
 import { IDateProvider } from "../../../../shared/container/providers/DateProvider/IDateProvider";
 import { IMailProvider } from "../../../../shared/container/providers/MailProvider/IMailProvider";
 import { AppError } from "../../../../shared/errors/AppError";
-import { UsersRepository } from "../../infra/typeorm/repositories/UsersRepository";
-import { UsersTokensRepository } from "../../infra/typeorm/repositories/UsersTokensRepository";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUsersTokensRepository } from "../../repositories/IUsersTokensRepository";
 
 @injectable()
 class SendForgotPasswordMailUseCase {
   constructor(
     @inject("UsersRepository")
-    private usersRepository: UsersRepository,
+    private usersRepository: IUsersRepository,
     @inject("UsersTokensRepository")
-    private usersTokensRepository: UsersTokensRepository,
+    private usersTokensRepository: IUsersTokensRepository,
     @inject("DayjsDateProvider")
     private dateProvider: IDateProvider,
     @inject("EtherealMailProvider")
