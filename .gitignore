@@ -155,6 +155,10 @@ dist
 .webpack/
 
 ### Pasta tmp ###
-tmp/
+tmp/*
+!tmp/.gitkeep
+
+### ORMConfig ###
+ormconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,node
